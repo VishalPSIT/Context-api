@@ -5,14 +5,14 @@ import Blogs from '../Blogs';
 import Pagination from '../Pagination';
 
 const TagPage = () => {
-    const navigation = useNavigate();
+    const navigate = useNavigate();
     const location = useLocation();
     const tag = location.pathname.split("/").at(-1);
   return (
     <div>
         <Header/>
         <div>
-            <button onClick={() => {navigation(-1)}}>
+            <button onClick={() => {navigate(-1)}}>
                 Back
             </button>
             <h2>

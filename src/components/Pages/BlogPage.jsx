@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
-import { baseUrl } from '../../baseUrl';
+import { baseUrl, newBaseUrl } from '../../baseUrl';
 import Header from '../Header';
 import BlogDetails from '../BlogDetails';
 
@@ -15,7 +15,7 @@ const BlogPage = () => {
     const blogId = location.pathname.split("/").at(-1);
     async function fetchRelatedBlogs(){
         setLoading(true);
-        let url = `${baseUrl}?blogId=${blogId}`;
+        let url = `${newBaseUrl}?blogId=${blogId}`;
         try {
             const res = await fetch(url);
             const data = await res.json();
@@ -52,11 +52,11 @@ const BlogPage = () => {
                         <BlogDetails post = {blog}/>
                         <h2>Related Blogs</h2>
                         {
-                            relatedBlogs.map((post) => {
-                                <div key={post.id}>
+                            relatedBlogs.map((post) => (
+                                 <div key={post.id}>
                                     <BlogDetails post={post}/>
                                 </div>
-                            })
+                            ))
                         }
                     </div>
 

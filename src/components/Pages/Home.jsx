@@ -5,9 +5,9 @@ import Pagination from '../Pagination'
 
 const Home = () => {
   return (
-    <div>
+    <div className='flex justify-center items-center'>
         <Header/>
-        <div>
+        <div className='w-[560px] mt-[70px] mb-3'>
             <Blogs/>
             <Pagination/>
         </div>
