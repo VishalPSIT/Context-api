@@ -38,17 +38,17 @@ const BlogPage = () => {
     },[location.pathname])
 
   return (
-    <div>
+    <div className="w-full h-full flex flex-col gap-y-1 justify-center items-center">
 
         <Header/>
-        <div>
-            <button onClick={()=> navigation(-1)}>
+        <div className='mt-[2rem]'>
+            <button className='rounded-md border-2 px-4 py-1' onClick={()=> navigation(-1)}>
                 Back
             </button>
             {
                 loading ? (<p>Loading</p>) : 
                 blog ? (
-                    <div>
+                    <div >
                         <BlogDetails post = {blog}/>
                         <h2>Related Blogs</h2>
                         {

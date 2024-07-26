@@ -9,10 +9,10 @@ const TagPage = () => {
     const location = useLocation();
     const tag = location.pathname.split("/").at(-1);
   return (
-    <div>
+    <div className='w-full h-full flex flex-col gap-y-1 justify-center items-center'>
         <Header/>
         <div>
-            <button onClick={() => {navigate(-1)}}>
+            <button className='rounded-md border-2 px-4 py-1' onClick={() => {navigate(-1)}}>
                 Back
             </button>
             <h2>
